@@ -5,7 +5,7 @@ client.on('ready', () => {
     console.log(`${client.user.tag} sunucuya giriş yaptı!`); //Botunuzun sunucuya giriş yaptığını gösterir.
     
     
-    client.user.setActivity(`Geliştirme Aşamasında `); //Bu haliyle "Geliştirme Aşamasında Oynuyor" gibi gözükür, istediğiniz gibi değiştirebilirsiniz.
+    client.user.setActivity(`Bu bir taslaktır!`); //Bu haliyle "Bu bir taslaktır! Oynuyor" gibi gözükür, istediğiniz gibi değiştirebilirsiniz.
     });
 
     client.on('message', message => { //Gerekli bir koddur silmeyiniz, sonraki yazacağımız mesaj kodlarında işe yarar.
