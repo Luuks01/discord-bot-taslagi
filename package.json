@@ -1,0 +1,16 @@
+{
+    "name": "discord-bot-taslak",
+    "version": "0.0.1",
+    "description": "Bu bir bot taslağıdır!",
+    "main": "bot.js",
+    "scripts": {
+        "start": "node bot.js",
+        "test": "node bot.js"
+    },
+    "author": "UTKU",
+    "license": "ISC",
+    "dependencies": {
+        "discord.js": "^12.5.1",
+        "pm2": "^4.5.5"
+    }
+}
