@@ -19,7 +19,7 @@ client.on('ready', () => {
     const user = msg.mentions.users.first();
 
     if (user) {
-      if (!msg.member.hasPermission("ADMINISTRATOR" , "KICK_MEMBER")) return msg.reply(` Bu komutu kullanabilmek için "\`Yönetici\`" yetkisine sahip olmalısınız!`);
+      if (!msg.member.hasPermission("ADMINISTRATOR" , "KICK_MEMBERS")) return msg.reply(` Bu komutu kullanabilmek için "\`Yönetici\`" yetkisine sahip olmalısınız!`);
      
       const member = msg.guild.member(user);
 
