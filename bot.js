@@ -21,7 +21,7 @@ client.on('ready', () => {
     if (user) {
       if (!message.member.hasPermission("ADMINISTRATOR" , "KICK_MEMBERS")) return message.reply(` Bu komutu kullanabilmek için "\`Yönetici\`" yetkisine sahip olmalısınız!`);
      
-      const member = msg.guild.member(user);
+      const member = message.guild.member(user);
 
       if (member) {
 
