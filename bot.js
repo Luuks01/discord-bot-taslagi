@@ -26,7 +26,7 @@ client.on('ready', () => {
       if (member) {
 
         member
-          .kick('Kötü davrandı!')
+          .kick('Atılma Nedeni')
           .then(() => {
   
             message.reply(`${user.tag} başarıyla sunucudan atıldı!`);
@@ -66,7 +66,7 @@ client.on('ready', () => {
 
         member
           .ban({
-            reason: 'Kötü davrandı!',
+            reason: 'Banlanma nedeni',
           })
           .then(() => {
 
