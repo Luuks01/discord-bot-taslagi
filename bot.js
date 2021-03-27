@@ -11,15 +11,15 @@ client.on('ready', () => {
     client.on('message', message => { //Gerekli bir koddur silmeyiniz, sonraki yazacağımız mesaj kodlarında işe yarar.
     
         //KICK (ATMA)
-  if (!msg.guild) return;
+  if (!message.guild) return;
 
 
-  if (msg.content.startsWith(prefix + 'kick')) {
+  if (message.content.startsWith(prefix + 'kick')) {
 
-    const user = msg.mentions.users.first();
+    const user = message.mentions.users.first();
 
     if (user) {
-      if (!msg.member.hasPermission("ADMINISTRATOR" , "KICK_MEMBERS")) return msg.reply(` Bu komutu kullanabilmek için "\`Yönetici\`" yetkisine sahip olmalısınız!`);
+      if (!message.member.hasPermission("ADMINISTRATOR" , "KICK_MEMBERS")) return message.reply(` Bu komutu kullanabilmek için "\`Yönetici\`" yetkisine sahip olmalısınız!`);
      
       const member = msg.guild.member(user);
 
@@ -29,38 +29,38 @@ client.on('ready', () => {
           .kick('Kötü davrandı!')
           .then(() => {
   
-            msg.reply(`${user.tag} başarıyla sunucudan atıldı!`);
+            message.reply(`${user.tag} başarıyla sunucudan atıldı!`);
           })
           .catch(err => {   
   
-            msg.reply('Hata!');
+            message.reply('Hata!');
     
             console.error(err);
           });
       } else {
     
-        msg.reply("Bu kullanıcı sunucuda değil!");
+        message.reply("Bu kullanıcı sunucuda değil!");
       }
 
     } else {
-      msg.reply("Kullanıcı belirtmelisiniz!");
+      message.reply("Kullanıcı belirtmelisiniz!");
     }
   }
 
         
         //BAN (YASAK)
-  if (!msg.guild) return;
+  if (!message.guild) return;
 
 
-  if (msg.content.startsWith(prefix + 'ban')) {
+  if (message.content.startsWith(prefix + 'ban')) {
 
-    const user = msg.mentions.users.first();
+    const user = message.mentions.users.first();
     
-    if (!msg.member.hasPermission("ADMINISTRATOR" , "BAN_MEMBERS")) return msg.reply(` Bu komutu kullanabilmek için "\`Yönetici\`" yetkisine sahip olmalısınız!`);
+    if (!message.member.hasPermission("ADMINISTRATOR" , "BAN_MEMBERS")) return message.reply(` Bu komutu kullanabilmek için "\`Yönetici\`" yetkisine sahip olmalısınız!`);
     
     if (user) {
   
-      const member = msg.guild.member(user);
+      const member = message.guild.member(user);
  
       if (member) {
 
@@ -70,21 +70,21 @@ client.on('ready', () => {
           })
           .then(() => {
 
-            msg.reply(`${user.tag} başarıyla yasaklandı (banlandı)!`);
+            message.reply(`${user.tag} başarıyla yasaklandı (banlandı)!`);
           })
           .catch(err => {
     
-            msg.reply('Hata!');
+            message.reply('Hata!');
       
             console.error(err);
           });
       } else {
     
-        msg.reply("Bu kullanıcı sunucuda değil!");
+        message.reply("Bu kullanıcı sunucuda değil!");
       }
     } else {
     
-      msg.reply("Kullanıcı belirtmelisiniz!");
+      message.reply("Kullanıcı belirtmelisiniz!");
     }
   }
         
